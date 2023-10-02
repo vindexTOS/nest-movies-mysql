@@ -4,6 +4,14 @@ import { CreateMovie } from './dto/movie.dto';
 @Injectable()
 export class MovieService {
   constructor(private readonly mysqlService: MysqlService) {}
+  async GetAllMovies() {
+    const getSql = 'SELECT * FROM movies';
+
+    const movieData = await this.mysqlService.query(getSql);
+
+    return { data: movieData };
+  }
+
   async CreateMovie(requestBody: CreateMovie) {
     console.log(requestBody);
     try {

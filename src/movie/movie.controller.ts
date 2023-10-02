@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Get,
   HttpCode,
   Post,
   UsePipes,
@@ -17,5 +18,11 @@ export class MovieController {
   @UsePipes(ValidationPipe)
   CreateMovie(@Body() requestBody: CreateMovie) {
     return this.movieService.CreateMovie(requestBody);
+  }
+
+  @Get('all')
+  @HttpCode(200)
+  GetMovies() {
+    return this.movieService.GetAllMovies;
   }
 }
