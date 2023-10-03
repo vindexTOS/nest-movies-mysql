@@ -3,32 +3,59 @@
 
 
 
-CREATE TABLE movies (
+
+
+
+
+-- CREATE TABLE movies (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   title VARCHAR(255),
+--   color VARCHAR(225),
+--   color2 VARCHAR(225),
+--   img   TEXT,
+--   video TEXT
+--   );
+
+
+
+-- CREATE TABLE ratings (
+
+--     id INT AUTO_INCREMENT PRIMARY KEY ,
+--     IMDb INT,
+--     ROttenTomatos INT
+-- );
+
+
+
+
+
+-- CREATE TABLE user(
+
+--   id INT AUTO_INCREMENT PRIMARY KEY ,
+--   username VARCHAR(55),
+--   password text,
+--   role VARCHAR(55)
+-- );
+
+
+-- CREATE TABLE metadata(
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   hr VARCHAR(55),
+--   year INT,
+--   genre text
+-- );
+
+
+
+
+-- CREATE TABLE actors (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   name text
+-- );
+
+CREATE TABLE actors-img(
   id INT AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,  -- Add NOT NULL if title should not allow NULL values
-  rating INT,
-  
+  img TEXT,
+  FOREIGN KEY(actor_id) REFERENCES actors(id)
 );
-
-CREATE TABLE actor (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(225),
-  movie_id INT,
-  FOREIGN KEY (movie_id) REFERENCES movies(id)
-);
-
-CREATE TABLE collection (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  actor_id INT,
-  movie_id INT,
-  FOREIGN KEY (movie_id) REFERENCES movies(id)
-  FOREIGN KEY (actor_id) REFERENCES actor(id),
-);
-
-
-CREATE TABLE genre (
-     id INT AUTO_INCREMENT PRIMARY KEY,
-    genre_name VARCHAR(225),
-
  
-);

@@ -4,11 +4,21 @@ import { CreateMovie } from './dto/movie.dto';
 @Injectable()
 export class MovieService {
   constructor(private readonly mysqlService: MysqlService) {}
-  async GetAllMovies() {
-    const getSql = 'SELECT * FROM movies';
-
-    const movieData = await this.mysqlService.query(getSql);
-
+  async GetAllMovies(
+    title: string,
+    genre: string,
+    actor: string,
+    serach: string,
+  ) {
+    let getSql = '';
+    let movieData = [];
+    if (!title && !genre && !actor && !serach) {
+      movieData = await this.mysqlService.query('SELECT * FROM movies');
+    }
+    if (serach) {
+      getSql = 'SELECT * FROM movies WHERE title LIKE ?';
+      movieData = await this.mysqlService.query(getSql, [serach]);
+    }
     return { data: movieData };
   }
 

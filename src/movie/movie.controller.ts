@@ -6,6 +6,7 @@ import {
   Post,
   UsePipes,
   ValidationPipe,
+  Query,
 } from '@nestjs/common';
 import { MovieService } from './movie.service';
 import { CreateMovie } from './dto/movie.dto';
@@ -22,7 +23,12 @@ export class MovieController {
 
   @Get('all')
   @HttpCode(200)
-  GetMovies() {
-    return this.movieService.GetAllMovies;
+  GetMovies(
+    @Query('title') title: string,
+    @Query('search') serach: string,
+    @Query('genre') genre: string,
+    @Query('actor') actor: string,
+  ) {
+    return this.movieService.GetAllMovies(title, genre, actor, serach);
   }
 }
