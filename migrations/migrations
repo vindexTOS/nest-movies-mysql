@@ -1,4 +1,6 @@
 
+
+
 --  you should create this tables one by one, from genre to actor 
 
 
@@ -52,10 +54,35 @@
 --   id INT AUTO_INCREMENT PRIMARY KEY,
 --   name text
 -- );
-
-CREATE TABLE actors-img(
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  img TEXT,
-  FOREIGN KEY(actor_id) REFERENCES actors(id)
-);
+-- CREATE TABLE actorsImg(
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   img TEXT,
+--   actor_id INT,
+--   FOREIGN KEY(actor_id) REFERENCES actors(id)
+-- );
  
+
+-- CREATE TABLE reviews (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   comment text,
+--   rate INT,
+--   user_id INT,
+--   FOREIGN KEY( user_id) REFERENCES user(id)
+
+-- );
+
+--  CREATE TABLE movieCollection (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   movie_id INT,
+--   rating_id INT,
+--   user_id INT,
+--   metadata_id INT,
+--   actors_id INT,
+--   reviews_id INT,
+--   FOREIGN KEY(movie_id) REFERENCES movies(id),
+--   FOREIGN KEY(rating_id) REFERENCES ratings(id),
+--   FOREIGN KEY(user_id) REFERENCES user(id),
+--   FOREIGN KEY(metadata_id) REFERENCES metadata(id),
+--   FOREIGN KEY(actors_id) REFERENCES actors(id),
+--   FOREIGN KEY(reviews_id) REFERENCES reviews(id)
+--  );
