@@ -19,6 +19,10 @@ export class MovieService {
       getSql = 'SELECT * FROM movies WHERE title LIKE ?';
       movieData = await this.mysqlService.query(getSql, [serach]);
     }
+
+    if(genre){
+      getSql = ""
+    }
     return { data: movieData };
   }
 
