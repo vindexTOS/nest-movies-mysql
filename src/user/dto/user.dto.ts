@@ -9,3 +9,11 @@ export class CreateUserValid {
   @IsNotEmpty({ message: 'Password does not match' })
   confirmPassword: string;
 }
+
+export class LogInUserValid {
+  @IsNotEmpty({ message: 'Fill username' })
+  username: string;
+
+  @IsNotEmpty({ message: 'Fill password' })
+  password: string;
+}
