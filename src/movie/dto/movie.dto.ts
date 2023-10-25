@@ -1,13 +1,16 @@
 import { IsNotEmpty, Length } from 'class-validator';
 
 export class CreateMovie {
+  color: string;
+  color2: string;
+  video: string;
+  // @IsNotEmpty({ message: 'Description is needed' })
+  // description: string;
   @IsNotEmpty({ message: 'Movie name' })
-  @Length(3, 255)
   title: string;
-  @IsNotEmpty({ message: 'Need rating' })
-  rating: number;
-  @IsNotEmpty({ message: 'actors Array should be accesed' })
-  actors: string[];
-  @IsNotEmpty({ message: 'string Array should be accesed' })
-  genre: string;
+  @IsNotEmpty({ message: 'Photo is required' })
+  img: string;
+
+  @IsNotEmpty({ message: 'User Should be included' })
+  id: number;
 }

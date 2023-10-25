@@ -21,14 +21,14 @@ export class MovieController {
     return this.movieService.CreateMovie(requestBody);
   }
 
-  @Get('all')
-  @HttpCode(200)
-  GetMovies(
-    @Query('title') title: string,
-    @Query('search') serach: string,
-    @Query('genre') genre: string,
-    @Query('actor') actor: string,
-  ) {
-    return this.movieService.GetAllMovies(title, genre, actor, serach);
-  }
+  // @Get('all')
+  // @HttpCode(200)
+  // GetMovies(
+  //   @Query('title') title: string,
+  //   @Query('search') serach: string,
+  //   @Query('genre') genre: string,
+  //   @Query('actor') actor: string,
+  // ) {
+  //   return this.movieService.GetAllMovies(title, genre, actor, serach);
+  // }
 }
