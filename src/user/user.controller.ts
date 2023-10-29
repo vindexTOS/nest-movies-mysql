@@ -17,6 +17,8 @@ export class UserController {
   @HttpCode(201)
   @UsePipes(ValidationPipe)
   CreateUser(@Body() requestBody: CreateUserValid) {
+    console.log(requestBody);
+
     return this.userService.signup(requestBody);
   }
 

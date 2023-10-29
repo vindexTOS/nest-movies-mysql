@@ -33,6 +33,7 @@
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.6.1",
     "nestjs-mysql": "^1.0.0",

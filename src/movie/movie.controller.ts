@@ -21,6 +21,11 @@ export class MovieController {
     return this.movieService.CreateMovie(requestBody);
   }
 
+  @Get('all')
+  @HttpCode(200)
+  GetAllMovies() {
+    return this.movieService.GetAllMovies();
+  }
   // @Get('all')
   // @HttpCode(200)
   // GetMovies(

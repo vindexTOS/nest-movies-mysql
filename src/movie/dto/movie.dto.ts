@@ -4,6 +4,9 @@ export class CreateMovie {
   color: string;
   color2: string;
   video: string;
+  hr: string;
+  year: number;
+  genre: string;
   // @IsNotEmpty({ message: 'Description is needed' })
   // description: string;
   @IsNotEmpty({ message: 'Movie name' })
